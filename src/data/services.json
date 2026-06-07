@@ -1,0 +1,103 @@
+{
+  "services": [
+    {
+      "slug": "garde-de-chien",
+      "label": "Garde de chien",
+      "labelLong": "Garde de chien à domicile",
+      "emoji": "🐕",
+      "keyword": "garde de chien",
+      "intent": "garde votre chien dans son environnement habituel, avec repas, sorties, jeux et beaucoup d'attention",
+      "intro": "Chaque chien a son rythme, ses habitudes et son caractère. Plutôt que de bouleverser ses repères dans une pension, je veille sur lui directement chez vous : repas aux horaires habituels, sorties, jeux, câlins et surveillance de son état général.",
+      "bullets": [
+        "Respect des horaires de repas et des habitudes",
+        "Sorties et temps de jeu quotidiens",
+        "Surveillance de l'état général et du comportement",
+        "Photos et nouvelles à chaque passage"
+      ],
+      "priceLines": [
+        ["Visite à domicile 30 min", "12 €"],
+        ["Visite à domicile 1h", "18 €"],
+        ["Garde à votre domicile · journée", "35 €"],
+        ["Garde à votre domicile · nuitée", "50 €"]
+      ],
+      "faq": [
+        ["Mon chien reste-t-il chez moi ?", "Oui. La garde de chien se fait à votre domicile pour qu'il conserve ses repères. Une garde à mon domicile est aussi possible pour les chiens sociables."],
+        ["Vais-je recevoir des nouvelles ?", "Oui, des photos et un message vous sont envoyés à chaque visite ou journée de garde."]
+      ]
+    },
+    {
+      "slug": "garde-de-chat",
+      "label": "Garde de chat",
+      "labelLong": "Visites à domicile pour chat",
+      "emoji": "🐱",
+      "keyword": "garde de chat",
+      "intent": "veille sur votre chat chez vous, avec repas, eau fraîche, litière, jeux et câlins, sans bouleverser son territoire",
+      "intro": "Le chat est très attaché à son territoire et supporte mal les changements d'environnement. Les visites à domicile sont donc la solution idéale : votre chat reste chez lui et conserve toutes ses habitudes pendant votre absence.",
+      "bullets": [
+        "Renouvellement de l'eau et distribution des repas",
+        "Nettoyage de la litière",
+        "Jeux, interactions et câlins",
+        "Surveillance du comportement et de la santé"
+      ],
+      "priceLines": [
+        ["Visite à domicile 30 min", "12 €"],
+        ["Visite à domicile 45 min", "14 €"],
+        ["Visite à domicile 1h", "18 €"],
+        ["Forfait 10 visites de 45 min", "126 €"]
+      ],
+      "faq": [
+        ["À quelle fréquence passez-vous ?", "Généralement une à deux visites par jour selon les besoins de votre chat. La fréquence est définie ensemble avant votre départ."],
+        ["Gérez-vous plusieurs chats ?", "Oui, je peux m'occuper de plusieurs chats lors d'une même visite à domicile."]
+      ]
+    },
+    {
+      "slug": "garde-nac",
+      "label": "Garde de NAC",
+      "labelLong": "Garde de NAC (nouveaux animaux de compagnie)",
+      "emoji": "🐹",
+      "keyword": "garde de NAC",
+      "intent": "prend soin de vos NAC — lapins, cochons d'Inde, rongeurs, furets, oiseaux et reptiles — avec des soins adaptés à chaque espèce",
+      "intro": "Lapins, cochons d'Inde, hamsters, gerbilles, rats domestiques, furets, oiseaux ou reptiles : chaque NAC a des besoins très spécifiques en matière d'alimentation, d'entretien et de surveillance. Les visites sont adaptées à votre animal pour garantir son confort et sa sécurité.",
+      "bullets": [
+        "Alimentation adaptée à l'espèce",
+        "Entretien et nettoyage de l'habitat",
+        "Surveillance attentive de l'état de santé",
+        "Photos et nouvelles à chaque visite"
+      ],
+      "priceLines": [
+        ["Visite à domicile 30 min", "12 €"],
+        ["Visite à domicile 45 min", "14 €"],
+        ["Forfait 10 visites de 30 min", "135 €"]
+      ],
+      "faq": [
+        ["Quels NAC pouvez-vous garder ?", "Lapins, cochons d'Inde, hamsters, gerbilles, rats domestiques, furets, oiseaux et reptiles selon leurs besoins spécifiques."],
+        ["Connaissez-vous les besoins de mon animal ?", "Oui. Nous faisons le point ensemble lors d'une visite de présentation pour respecter précisément son alimentation et son habitat."]
+      ]
+    },
+    {
+      "slug": "promenade-chien",
+      "label": "Promenade de chien",
+      "labelLong": "Promenade et sorties canines",
+      "emoji": "🦮",
+      "keyword": "promenade de chien",
+      "intent": "offre à votre chien des sorties régulières adaptées à son âge, son énergie et ses habitudes",
+      "intro": "Votre emploi du temps ne vous permet pas toujours d'assurer les sorties quotidiennes de votre chien ? Je propose un service de promenade adapté à son âge, son énergie et ses habitudes, pour son équilibre physique et mental.",
+      "bullets": [
+        "Maintien d'une bonne condition physique",
+        "Équilibre comportemental et stimulation mentale",
+        "Sorties adaptées au rythme de l'animal",
+        "Moins d'ennui et de comportements destructeurs"
+      ],
+      "priceLines": [
+        ["Promenade 30 min", "12 €"],
+        ["Promenade 1h", "17 €"],
+        ["Promenade Premium (1h+)", "22 €"],
+        ["Forfait 10 promenades d'1h", "153 €"]
+      ],
+      "faq": [
+        ["À quelle fréquence promenez-vous mon chien ?", "Selon vos besoins : ponctuellement, ou en forfait pour des sorties régulières chaque semaine."],
+        ["Promenez-vous plusieurs chiens ensemble ?", "Les sorties sont individuelles par foyer, dans le respect du rythme de votre chien."]
+      ]
+    }
+  ]
+}

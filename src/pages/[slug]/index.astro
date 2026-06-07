@@ -1,0 +1,255 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Cta from '../../components/Cta.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import TarifCard from '../../components/TarifCard.astro';
+import LinkGrid from '../../components/LinkGrid.astro';
+import ChipLinks from '../../components/ChipLinks.astro';
+import Faq from '../../components/Faq.astro';
+import {
+  site, services, communes, urlCommuneHub, urlActLoc,
+  neighbors, introFor, serviceLD, breadcrumbLD, faqLD, localBusinessLD,
+} from '../../lib/seo.js';
+
+export function getStaticPaths() {
+  const paths = [];
+  // hubs de service
+  services.forEach((service) => paths.push({ params: { slug: service.slug }, props: { type: 'service', service } }));
+  // hubs de commune
+  communes.forEach((commune) => paths.push({ params: { slug: 'pet-sitter-' + commune.slug }, props: { type: 'commune', commune } }));
+  // activité × localité
+  services.forEach((service) =>
+    communes.forEach((commune) =>
+      paths.push({ params: { slug: service.slug + '-' + commune.slug }, props: { type: 'actloc', service, commune } })
+    )
+  );
+  // mentions légales
+  paths.push({ params: { slug: 'mentions-legales' }, props: { type: 'legal' } });
+  return paths;
+}
+
+const { type, service, commune } = Astro.props;
+
+let title, description, path, trail, jsonld = [];
+
+if (type === 'service') {
+  path = service.url;
+  title = `${service.labelLong} à Chinon et alentours | ${site.shortName}`;
+  description = `${service.label} à Chinon et dans un rayon de ${site.radiusKm} km. ${service.intro.slice(0, 110)}…`;
+  trail = [{ name: 'Accueil', path: '/' }, { name: service.label, path }];
+  jsonld = [serviceLD(service, null, path), breadcrumbLD(trail), faqLD(service.faq)];
+} else if (type === 'commune') {
+  path = urlCommuneHub(commune);
+  title = `Pet Sitter à ${commune.name} | Garde de chien, chat et NAC – ${site.shortName}`;
+  description = `Pet sitter à ${commune.name} (${commune.zone}). Garde de chien, garde de chat, visites à domicile pour NAC et promenades canines. ACACED, assurance pro, premiers secours animaliers.`;
+  trail = [{ name: 'Accueil', path: '/' }, { name: 'Pet sitter à ' + commune.name, path }];
+  jsonld = [serviceLD({ label: 'Pet sitting', slug: 'pet-sitter' }, commune.name, path), breadcrumbLD(trail), localBusinessLD()];
+} else if (type === 'actloc') {
+  path = urlActLoc(service, commune);
+  title = `${service.label} à ${commune.name} | ${site.shortName}`;
+  description = `${service.label} à ${commune.name} (${commune.zone}) — un pet sitter de confiance à domicile. ACACED, assurance professionnelle, premiers secours animaliers. Visite de présentation offerte.`;
+  trail = [{ name: 'Accueil', path: '/' }, { name: service.label, path: service.url }, { name: commune.name, path }];
+  jsonld = [serviceLD(service, commune.name, path), breadcrumbLD(trail), faqLD(service.faq)];
+} else {
+  path = '/mentions-legales/';
+  title = `Mentions légales | ${site.shortName}`;
+  description = `Mentions légales du site ${site.name}.`;
+  trail = [{ name: 'Accueil', path: '/' }, { name: 'Mentions légales', path }];
+}
+
+// données dérivées par type
+const communeLinks = type === 'service'
+  ? communes.map((c) => ({ href: urlActLoc(service, c), label: `${service.label} à ${c.name}`, zone: c.zone, emoji: service.emoji }))
+  : [];
+
+const near = (type === 'commune')
+  ? neighbors(commune, 8).map((n) => ({ href: urlCommuneHub(n), label: 'Pet sitter à ' + n.name, zone: n.zone, emoji: '📍' }))
+  : [];
+
+const intro = type === 'actloc' ? introFor(service, commune) : null;
+const nearActloc = type === 'actloc'
+  ? neighbors(commune, 6).map((n) => ({ href: urlActLoc(service, n), label: `${service.label} à ${n.name}` }))
+  : [];
+const otherServices = type === 'actloc'
+  ? services.filter((s) => s.slug !== service.slug).map((s) => ({ href: urlActLoc(s, commune), label: `${s.label} à ${commune.name}` }))
+  : [];
+
+const communeIntro = (type === 'commune' && commune.home)
+  ? `Basé à ${commune.name}, je propose des prestations de garde d'animaux à domicile, de visites pour chiens, chats et NAC, de promenades canines ainsi qu'un service de garde de chien à mon domicile. J'interviens dans tout le secteur, dans un rayon d'environ ${site.radiusKm} km.`
+  : (type === 'commune'
+    ? `Vous recherchez un pet sitter à ${commune.name} pour prendre soin de votre animal pendant votre absence ? Basé à ${site.homeCity}, à proximité de ${commune.name} (${commune.zone}), j'interviens directement à votre domicile pour assurer le bien-être de votre compagnon tout en respectant ses habitudes et son environnement.`
+    : null);
+---
+<Base title={title} description={description} jsonld={jsonld}>
+  <Breadcrumb items={trail} />
+
+  {type === 'service' && (
+    <>
+      <section class="bg-linen">
+        <div class="section-inner">
+          <p class="eyebrow">{service.emoji} Service</p>
+          <h2>{service.labelLong} à Chinon et alentours</h2>
+          <div class="prose" style="margin-top:20px">
+            <p>{service.intro}</p>
+            <h3>Ce que comprend la prestation</h3>
+            <ul>{service.bullets.map((b) => <li>{b}</li>)}</ul>
+            <p>
+              J'interviens à {site.homeCity} et dans un rayon d'environ {site.radiusKm} km. Une visite de
+              présentation est offerte avant toute première prestation afin de faire connaissance avec
+              votre animal et de respecter précisément ses habitudes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white" id="tarifs">
+        <div class="section-inner">
+          <div class="section-header"><p class="eyebrow">Tarifs</p><h2>Tarifs {service.label.toLowerCase()}</h2></div>
+          <div class="tarifs-grid">
+            <TarifCard service={service} />
+            <div class="tarif-card">
+              <div class="tarif-card-head"><div class="tarif-icon">📋</div><div><h3>Bon à savoir</h3><span class="sub">Conditions</span></div></div>
+              <div class="prose"><ul><li>Visites en journée entre 8h et 18h</li><li>Majoration de 30 % le dimanche</li><li>5 km inclus, puis 0,30 € / km</li><li>Photos et nouvelles à chaque passage</li></ul></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-linen">
+        <div class="section-inner">
+          <div class="section-header">
+            <p class="eyebrow">Par commune</p>
+            <h2>{service.label} près de chez vous</h2>
+            <p class="lead">Retrouvez le service de {service.keyword} dans votre commune, à {site.homeCity} et alentours.</p>
+          </div>
+          <LinkGrid items={communeLinks} />
+        </div>
+      </section>
+
+      <section class="bg-white">
+        <div class="section-inner">
+          <div class="section-header"><p class="eyebrow">Questions fréquentes</p><h2>FAQ — {service.label}</h2></div>
+          <Faq items={service.faq} />
+        </div>
+      </section>
+    </>
+  )}
+
+  {type === 'commune' && (
+    <>
+      <section class="bg-linen">
+        <div class="section-inner">
+          <p class="eyebrow">📍 {commune.zone}</p>
+          <h2>Pet sitter à {commune.name}</h2>
+          <div class="prose" style="margin-top:20px">
+            <p>{communeIntro}</p>
+            <p>
+              Que vous partiez en vacances, en week-end ou en déplacement professionnel, votre chien,
+              chat ou NAC reste dans son environnement familier et bénéficie d'une présence rassurante.
+              Vous recevez des photos et des nouvelles régulières pour partir l'esprit tranquille.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white">
+        <div class="section-inner">
+          <div class="section-header"><p class="eyebrow">Mes services à {commune.name}</p><h2>Garde d'animaux à {commune.name}</h2></div>
+          <div class="services-grid">
+            {services.map((s, i) => <ServiceCard service={s} commune={commune} featured={i === 0} href={urlActLoc(s, commune)} />)}
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-linen" id="tarifs">
+        <div class="section-inner">
+          <div class="section-header">
+            <p class="eyebrow">Tarifs</p><h2>Tarifs à {commune.name}</h2>
+            <p class="tarifs-intro">Tarifs indicatifs TTC. 5 km inclus autour de {site.homeCity}, puis 0,30 € / km. Majoration de 30 % le dimanche.</p>
+          </div>
+          <div class="tarifs-grid">{services.map((s) => <TarifCard service={s} />)}</div>
+        </div>
+      </section>
+
+      <section class="bg-white">
+        <div class="section-inner">
+          <div class="section-header"><p class="eyebrow">À proximité</p><h2>Communes voisines desservies</h2></div>
+          <LinkGrid items={near} />
+        </div>
+      </section>
+    </>
+  )}
+
+  {type === 'actloc' && (
+    <>
+      <section class="bg-linen">
+        <div class="section-inner">
+          <p class="eyebrow">{service.emoji} {service.label} · {commune.zone}</p>
+          <h2>{service.label} à {commune.name}</h2>
+          <div class="prose" style="margin-top:20px">
+            <p>{intro}</p>
+            <h3>{service.labelLong} à {commune.name} : ce qui est inclus</h3>
+            <ul>{service.bullets.map((b) => <li>{b}</li>)}</ul>
+            <p>
+              Je suis titulaire de l'{site.credentials[0]}, formé aux premiers secours canins et félins,
+              et je dispose d'une assurance responsabilité civile professionnelle. À chaque passage à
+              {' '}{commune.name}, vous recevez des photos et des nouvelles de votre animal.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white" id="tarifs">
+        <div class="section-inner">
+          <div class="section-header">
+            <p class="eyebrow">Tarifs</p><h2>Tarifs {service.label.toLowerCase()} à {commune.name}</h2>
+            <p class="tarifs-intro">Tarifs indicatifs TTC. Frais kilométriques : 5 km inclus autour de {site.homeCity}, puis 0,30 € / km. Majoration de 30 % le dimanche.</p>
+          </div>
+          <div class="tarifs-grid">
+            <TarifCard service={service} />
+            <div class="tarif-card">
+              <div class="tarif-card-head"><div class="tarif-icon">📋</div><div><h3>Conditions</h3><span class="sub">À {commune.name}</span></div></div>
+              <div class="prose"><ul><li>Visites en journée entre 8h et 18h</li><li>Visite de présentation offerte</li><li>Photos et nouvelles à chaque passage</li><li>{commune.zone}</li></ul></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-linen">
+        <div class="section-inner">
+          <div class="section-header"><p class="eyebrow">Autres prestations à {commune.name}</p><h2>Tous mes services à {commune.name}</h2></div>
+          <ChipLinks items={otherServices} />
+          <p class="lead" style="margin-top:28px">
+            Voir aussi : <a href={urlCommuneHub(commune)} style="color:var(--green);font-weight:700">Pet sitter à {commune.name} (toutes prestations)</a>
+          </p>
+          <div class="section-header" style="margin-top:40px"><p class="eyebrow">À proximité</p><h2>{service.label} dans les communes voisines</h2></div>
+          <ChipLinks items={nearActloc} />
+        </div>
+      </section>
+
+      <section class="bg-white">
+        <div class="section-inner">
+          <div class="section-header"><p class="eyebrow">Questions fréquentes</p><h2>FAQ — {service.label} à {commune.name}</h2></div>
+          <Faq items={service.faq} />
+        </div>
+      </section>
+    </>
+  )}
+
+  {type === 'legal' && (
+    <section class="bg-linen">
+      <div class="section-inner">
+        <h2>Mentions légales</h2>
+        <div class="prose" style="margin-top:20px">
+          <p><strong>Éditeur :</strong> {site.name} — {site.homeCity}, Val de Loire.</p>
+          <p><strong>Contact :</strong> {site.phone} · {site.email}</p>
+          <p><strong>Certifications :</strong> {site.credentials.join(', ')}.</p>
+          <p>Contenu à compléter (SIRET, hébergeur, etc.) avant mise en ligne.</p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Cta />
+</Base>

@@ -1,0 +1,32 @@
+---
+import { services } from '../lib/seo.js';
+---
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Les P'tites Pattes de Chinon — Accueil">
+      <div class="nav-paw">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <ellipse cx="12" cy="15.5" rx="6.2" ry="5.6" fill="white"></ellipse>
+          <ellipse cx="6.2" cy="9.2" rx="2" ry="2.8" fill="white" opacity=".88"></ellipse>
+          <ellipse cx="9.5" cy="7.4" rx="2" ry="2.8" fill="white" opacity=".88"></ellipse>
+          <ellipse cx="14.5" cy="7.4" rx="2" ry="2.8" fill="white" opacity=".88"></ellipse>
+          <ellipse cx="17.8" cy="9.2" rx="2" ry="2.8" fill="white" opacity=".88"></ellipse>
+        </svg>
+      </div>
+      <div>
+        <span class="brand-name">Les P'tites Pattes</span>
+        <span class="brand-sub">Chinon · 37</span>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="/">Accueil</a></li>
+      <li><a href={services[0].url}>Garde de chien</a></li>
+      <li><a href={services[1].url}>Garde de chat</a></li>
+      <li><a href={services[3].url}>Promenades</a></li>
+      <li><a href="/#tarifs">Tarifs</a></li>
+      <li><a href="/#zones">Zones</a></li>
+    </ul>
+    <a href="/#contact" class="nav-cta">Réserver une visite</a>
+  </div>
+</nav>

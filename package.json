@@ -1,0 +1,16 @@
+{
+  "name": "les-ptites-pattes-de-chinon",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Site SEO programmatique (activité × localité) — Astro, sortie 100% statique.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "3.7.3",
+    "astro": "6.4.4"
+  }
+}

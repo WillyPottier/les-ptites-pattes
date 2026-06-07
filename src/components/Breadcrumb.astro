@@ -1,0 +1,12 @@
+---
+const { items } = Astro.props;
+---
+<div class="breadcrumb">
+  <ol>
+    {items.map((t, i) =>
+      i === items.length - 1
+        ? <li aria-current="page">{t.name}</li>
+        : <li><a href={t.path}>{t.name}</a></li>
+    )}
+  </ol>
+</div>

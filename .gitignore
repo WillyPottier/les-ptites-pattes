@@ -1,0 +1,12 @@
+# dépendances
+node_modules/
+
+# build Astro
+dist/
+.astro/
+
+# divers
+*.log
+.DS_Store
+.env
+.env.*

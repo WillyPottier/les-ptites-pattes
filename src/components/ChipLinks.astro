@@ -1,0 +1,6 @@
+---
+const { items } = Astro.props;
+---
+<div class="chips-inline">
+  {items.map((it) => <a class="chip-link" href={it.href}>{it.label}</a>)}
+</div>

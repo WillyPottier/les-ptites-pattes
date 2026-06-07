@@ -1,0 +1,72 @@
+{
+  "name": "Les P'tites Pattes de Chinon",
+  "shortName": "Les P'tites Pattes",
+  "baseUrl": "https://www.les-ptites-pattes-de-chinon.com",
+  "homeCity": "Chinon",
+  "phone": "06 87 13 79 14",
+  "phoneIntl": "33687137914",
+  "email": "info@les-ptites-pattes-de-chinon.com",
+  "hours": "Du lundi au samedi, 8h–18h · Dimanche selon disponibilités",
+  "radiusKm": 20,
+  "credentials": [
+    "ACACED",
+    "Premiers secours canins et félins",
+    "Assurance responsabilité civile professionnelle",
+    "+3 ans d'expérience"
+  ],
+  "socials": {
+    "instagram": "https://instagram.com/milo.mignon",
+    "facebook": "https://facebook.com/profile.php?id=61575037797263",
+    "tiktok": "https://tiktok.com/@milomignon"
+  },
+  "forfaits": [
+    {
+      "name": "Forfait 10 promenades d’ 1h (chien)",
+      "price": "153,00 €",
+      "economy": "économie de 17 €"
+    },
+    {
+      "name": "Forfait 10 visites de 45 min (chien & chat)",
+      "price": "126,00 €",
+      "economy": "économie de 14 €"
+    },
+    {
+      "name": "Forfait 10 visites de 30 min (NAC)",
+      "price": "135,00 €",
+      "economy": "économie de 15 €"
+    }
+  ],
+  "conditions": [
+    "Visites en journée entre 8h et 18h à votre domicile",
+    "Garde à mon domicile uniquement pour les chiens sociables — de jour entre 8h et 18h, la nuit entre 19h et 7h",
+    "Les visites comprennent : remplissage des gamelles, nettoyage des salissures, temps de jeu et/ou câlins",
+    "Vous recevez photos et messages pour chaque visite et garde"
+  ],
+  "majoration": "Dimanche : majoration de +30 %",
+  "fraisKm": [
+    "Déplacement inclus dans un rayon de 5 km autour de Chinon",
+    "Au-delà de 5 km : 0,30 € / km supplémentaire"
+  ],
+  "why": [
+    {
+      "icon": "🏠",
+      "title": "À domicile, toujours",
+      "text": "Votre animal ne quitte jamais son environnement familier, sans stress de transport ni déracinement."
+    },
+    {
+      "icon": "📱",
+      "title": "Suivi en temps réel",
+      "text": "Photos et compte-rendus envoyés après chaque visite via WhatsApp pour votre sérénité."
+    },
+    {
+      "icon": "🩺",
+      "title": "Formé & assuré",
+      "text": "ACACED, premiers secours canins et félins et assurance responsabilité civile professionnelle."
+    },
+    {
+      "icon": "📍",
+      "title": "Local & réactif",
+      "text": "Je connais Chinon et ses alentours. Disponible 6j/7, réponse rapide."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+name: Build hebdomadaire (publication progressive)
+
+# Redéclenche un build Netlify chaque lundi : les communes dont la date
+# de publication est arrivée passent automatiquement en ligne.
+on:
+  schedule:
+    - cron: '0 6 * * 1'        # tous les lundis à 06:00 UTC
+  workflow_dispatch: {}        # + bouton "Run workflow" manuel
+
+jobs:
+  trigger-netlify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Déclencher le build Netlify
+        run: curl -fsS -X POST -d '{}' "${{ secrets.NETLIFY_BUILD_HOOK }}"

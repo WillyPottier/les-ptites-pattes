@@ -1,0 +1,18 @@
+---
+const { service, commune, featured = false, href } = Astro.props;
+const title = commune ? `${service.label} à ${commune.name}` : service.label;
+const desc = commune
+  ? service.intent.charAt(0).toUpperCase() + service.intent.slice(1) + '.'
+  : service.intro;
+---
+<article class={featured ? 'service-card featured' : 'service-card'}>
+  <div class="service-icon">{service.emoji}</div>
+  <h3>{title}</h3>
+  <p>{desc}</p>
+  {!commune && (
+    <div class="service-tags">
+      {service.bullets.slice(0, 3).map((b) => <span class="tag">{b.split(' ').slice(0, 2).join(' ')}</span>)}
+    </div>
+  )}
+  <a href={href} class="service-link">{commune ? 'Voir le détail →' : 'En savoir plus →'}</a>
+</article>

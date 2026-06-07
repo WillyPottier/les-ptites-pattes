@@ -1,0 +1,14 @@
+---
+import { site } from '../lib/seo.js';
+---
+<section class="cta-section" id="contact">
+  <div class="section-inner">
+    <h2>Votre animal mérite le meilleur</h2>
+    <p>{site.hours} · {site.homeCity} &amp; alentours</p>
+    <div class="cta-actions">
+      <a href={`tel:${site.phoneIntl}`} class="btn-white">📞 {site.phone}</a>
+      <a href={`https://api.whatsapp.com/send?phone=${site.phoneIntl}`} class="btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+      <a href={`mailto:${site.email}`} class="btn-outline-white">Envoyer un email</a>
+    </div>
+  </div>
+</section>

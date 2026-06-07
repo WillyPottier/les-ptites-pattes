@@ -1,0 +1,11 @@
+---
+const { items } = Astro.props;
+---
+<div class="linkgrid">
+  {items.map((it) =>
+    <a class="linkcard" href={it.href}>
+      <span class="lc-emoji">{it.emoji || '📍'}</span>
+      <span>{it.label}{it.zone && <span class="lc-zone">{it.zone}</span>}</span>
+    </a>
+  )}
+</div>

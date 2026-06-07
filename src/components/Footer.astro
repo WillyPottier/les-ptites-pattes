@@ -1,0 +1,47 @@
+---
+import { site, services, coreCommunes, urlCommuneHub } from '../lib/seo.js';
+const year = new Date().getFullYear();
+---
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-paw">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <ellipse cx="12" cy="15.5" rx="6.2" ry="5.6" fill="white"></ellipse>
+              <ellipse cx="6.2" cy="9.2" rx="2" ry="2.8" fill="white" opacity=".88"></ellipse>
+              <ellipse cx="9.5" cy="7.4" rx="2" ry="2.8" fill="white" opacity=".88"></ellipse>
+              <ellipse cx="14.5" cy="7.4" rx="2" ry="2.8" fill="white" opacity=".88"></ellipse>
+              <ellipse cx="17.8" cy="9.2" rx="2" ry="2.8" fill="white" opacity=".88"></ellipse>
+            </svg>
+          </div>
+          <span class="footer-name">{site.name}</span>
+        </div>
+        <p class="footer-desc">Pet sitter à {site.homeCity} et dans un rayon d'environ {site.radiusKm} km. Garde d'animaux à domicile, visites pour chiens, chats et NAC, promenades canines. {site.credentials[0]}, assurance professionnelle et premiers secours animaliers.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          {services.map((s) => <li><a href={s.url}>{s.label}</a></li>)}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Zones desservies</h4>
+        <ul>
+          {coreCommunes.slice(0, 6).map((c) => <li><a href={urlCommuneHub(c)}>Pet sitter à {c.name}</a></li>)}
+          <li><a href="/#zones">Toutes les communes →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© {year} {site.name} · Val de Loire · Tous droits réservés</p>
+      <nav class="footer-socials" aria-label="Réseaux sociaux">
+        <a href={site.socials.instagram} target="_blank" rel="noopener">Instagram</a>
+        <a href={site.socials.facebook} target="_blank" rel="noopener">Facebook</a>
+        <a href={site.socials.tiktok} target="_blank" rel="noopener">TikTok</a>
+        <a href="/mentions-legales/">Mentions légales</a>
+      </nav>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,202 @@
+---
+import Base from '../layouts/Base.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import TarifCard from '../components/TarifCard.astro';
+import LinkGrid from '../components/LinkGrid.astro';
+import Cta from '../components/Cta.astro';
+import { site, services, communes, coreCommunes, urlCommuneHub, localBusinessLD } from '../lib/seo.js';
+
+const title = "Pet Sitter à Chinon | Garde de Chiens, Chats et NAC – Les P'tites Pattes de Chinon";
+const description =
+  "Pet sitter à Chinon et alentours. Visites à domicile pour chiens, chats et NAC, promenades canines et garde de chiens. ACACED, assurance professionnelle, premiers secours animaliers.";
+const jsonld = [localBusinessLD()];
+
+const allZones = communes.map((c) => ({
+  href: urlCommuneHub(c),
+  label: 'Pet sitter à ' + c.name,
+  zone: c.zone,
+  emoji: '📍',
+}));
+---
+<Base title={title} description={description} jsonld={jsonld}>
+  <section class="hero" style="padding:0">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">🐾 Pet-sitter à domicile · {site.homeCity}, Indre-et-Loire</div>
+        <h1>Votre animal<br />entre de <em>bonnes pattes</em></h1>
+        <p class="hero-sub">Gardes, visites &amp; promenades avec bienveillance</p>
+        <p class="hero-body">
+          Chiens, chats et NAC gardés dans leur environnement familier à {site.homeCity} et dans un
+          rayon d'environ {site.radiusKm} km. Une présence douce, attentionnée et professionnelle pour
+          votre tranquillité d'esprit.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Prendre contact</a>
+          <a href="#services" class="btn-ghost">Découvrir les services →</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item"><span class="num">ACACED</span><span class="label">Certifié</span></div>
+          <div class="trust-item"><span class="num">+3 ans</span><span class="label">D'expérience</span></div>
+          <div class="trust-item"><span class="num">100%</span><span class="label">À domicile</span></div>
+          <div class="trust-item"><span class="num">6j/7</span><span class="label">Disponible</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-ph"><span class="paw-big">🐾</span><p>Photo de Léo<br />à insérer ici</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="zone-band">
+    <div class="zone-inner">
+      <span class="zone-label">Zones d'intervention :</span>
+      <div class="zone-sep"></div>
+      <div class="zone-towns">
+        {coreCommunes.map((c) => <a href={urlCommuneHub(c)}>{c.name}</a>)}
+      </div>
+    </div>
+  </div>
+
+  <section class="bg-linen" id="services">
+    <div class="section-inner">
+      <div class="section-header">
+        <p class="eyebrow">Mes services</p>
+        <h2>Ce que je propose pour vos animaux</h2>
+      </div>
+      <div class="services-grid">
+        {services.map((s, i) => <ServiceCard service={s} featured={i === 0} href={s.url} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white" id="tarifs">
+    <div class="section-inner">
+      <div class="section-header">
+        <p class="eyebrow">Tarifs &amp; prestations</p>
+        <h2>Des tarifs clairs et transparents</h2>
+        <p class="tarifs-intro">
+          Tarifs indicatifs TTC. Visite de présentation offerte avant toute première garde. Majoration
+          de 30 % le dimanche. Frais kilométriques : 5 km inclus, puis 0,30 € / km.
+        </p>
+      </div>
+      <div class="tarifs-grid">
+        {services.map((s) => <TarifCard service={s} />)}
+      </div>
+
+      <div class="forfaits-block">
+        <div class="forfaits-title">🎁 Forfaits — économisez sur les visites régulières</div>
+        <div class="forfaits-sub">10 séances achetées à l'avance</div>
+        {site.forfaits.map((f) => (
+          <div class="forfait-row">
+            <span class="forfait-name">{f.name}</span>
+            <span class="forfait-price">{f.price}<span class="forfait-economy"> {f.economy}</span></span>
+          </div>
+        ))}
+      </div>
+
+      <div class="conditions-block">
+        <div class="cond-card">
+          <h4>📋 Conditions</h4>
+          <ul>{site.conditions.map((c) => <li>{c}</li>)}</ul>
+          <div class="majoration-badge">🌞 {site.majoration}</div>
+        </div>
+        <div class="cond-card">
+          <h4>🚗 Frais kilométriques</h4>
+          <ul>{site.fraisKm.map((c) => <li>{c}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-linen about" id="qui-suis-je">
+    <div class="about-inner">
+      <div class="about-photo">
+        <div class="about-img-frame">
+          <div class="about-img-inner"><span class="big">🐾</span><p>Photo de Léo<br />à insérer ici</p></div>
+        </div>
+        <div class="about-badge"><span class="badge-big">ACACED</span><span class="badge-small">Certifié</span></div>
+      </div>
+      <div class="about-content">
+        <p class="eyebrow">Qui suis-je ?</p>
+        <h2>Léo, pet-sitter<br /><em>passionné</em> à Chinon</h2>
+        <p>
+          Amoureux des animaux depuis toujours, je propose des services de garde, de visite et de
+          promenade à domicile à {site.homeCity} et ses alentours, dans un rayon d'environ {site.radiusKm} km.
+        </p>
+        <p>
+          Mon objectif est simple : assurer le bien-être de votre compagnon tout en respectant ses
+          habitudes et son environnement. Je traite chaque animal confié avec la même attention que
+          s'il était le mien.
+        </p>
+        <ul class="about-checklist">
+          {site.credentials.map((c) => <li><div class="check-icon">✓</div>{c}</li>)}
+        </ul>
+        <a href="#contact" class="btn-primary">Me contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-dark" id="pourquoi">
+    <div class="section-inner">
+      <p class="eyebrow">Pourquoi me choisir</p>
+      <h2>Ce qui fait la différence</h2>
+      <p class="why-intro">
+        Parce que votre animal mérite une présence bienveillante, et vous méritez la tranquillité
+        d'esprit pendant vos absences.
+      </p>
+      <div class="why-grid">
+        {site.why.map((w, i) => (
+          <div class="why-item">
+            <span class="why-num">{String(i + 1).padStart(2, '0')}</span>
+            <span class="why-icon">{w.icon}</span>
+            <strong>{w.title}</strong>
+            <span>{w.text}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white" id="zones">
+    <div class="section-inner">
+      <div class="section-header">
+        <p class="eyebrow">Secteur d'intervention</p>
+        <h2>Pet sitter à Chinon et dans {communes.length} communes</h2>
+        <p class="lead">
+          J'interviens à {site.homeCity} ainsi que dans les communes situées dans un rayon d'environ
+          {site.radiusKm} km. Cliquez sur votre commune pour découvrir les services de garde d'animaux
+          disponibles près de chez vous.
+        </p>
+      </div>
+      <div class="linkgrid" id="zones-grid">
+        {allZones.map((it, i) => (
+          <a class="linkcard" href={it.href} hidden={i >= 10}>
+            <span class="lc-emoji">{it.emoji}</span>
+            <span>{it.label}<span class="lc-zone">{it.zone}</span></span>
+          </a>
+        ))}
+      </div>
+      {allZones.length > 10 && (
+        <div style="text-align:center;margin-top:28px">
+          <button type="button" class="btn-primary" id="zones-toggle">
+            Voir les {allZones.length - 10} autres communes →
+          </button>
+        </div>
+      )}
+      <script is:inline>
+        (function () {
+          var btn = document.getElementById('zones-toggle');
+          var grid = document.getElementById('zones-grid');
+          if (btn && grid) {
+            btn.addEventListener('click', function () {
+              grid.querySelectorAll('[hidden]').forEach(function (el) { el.hidden = false; });
+              btn.hidden = true;
+            });
+          }
+        })();
+      </script>
+    </div>
+  </section>
+
+  <Cta />
+</Base>

@@ -1,0 +1,14 @@
+---
+const { service, sub = 'Tarifs indicatifs TTC' } = Astro.props;
+---
+<div class="tarif-card">
+  <div class="tarif-card-head">
+    <div class="tarif-icon">{service.emoji}</div>
+    <div><h3>{service.label}</h3><span class="sub">{sub}</span></div>
+  </div>
+  <div class="tarif-rows">
+    {service.priceLines.map(([n, p]) =>
+      <div class="tarif-row"><span class="tarif-row-name">{n}</span><span class="tarif-row-price">{p}</span></div>
+    )}
+  </div>
+</div>

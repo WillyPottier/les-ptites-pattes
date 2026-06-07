@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.les-ptites-pattes-de-chinon.com/sitemap-index.xml
