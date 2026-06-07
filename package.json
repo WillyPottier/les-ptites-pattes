@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
-  "description": "Site SEO programmatique (activité par localité) — Astro, sortie 100% statique.",
+  "description": "Pet-Sitter de Chinon et ses alentours.",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
