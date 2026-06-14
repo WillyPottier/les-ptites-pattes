@@ -7,13 +7,16 @@
       "emoji": "🐕",
       "keyword": "garde de chien",
       "intent": "garde votre chien dans son environnement habituel, avec repas, sorties, jeux et beaucoup d'attention",
-      "intro": "Chaque chien a son rythme, ses habitudes et son caractère. Plutôt que de bouleverser ses repères dans une pension, je veille sur lui directement chez vous : repas aux horaires habituels, sorties, jeux, câlins et surveillance de son état général.",
+      "intro": "Chaque chien a son rythme, ses habitudes et son caractère. Plutôt que de bouleverser ses repères dans une pension : repas aux horaires habituels, sorties, jeux, câlins et surveillance de son état général.",
       "bullets": [
         "Respect des horaires de repas et des habitudes",
         "Sorties et temps de jeu quotidiens",
         "Surveillance de l'état général et du comportement",
-        "Photos et nouvelles à chaque passage"
+        "Photos et nouvelles à chaque passage",
+        "Considéré comme un membre de la famille"
       ],
+      "tags": ["Habitudes respectées", "Sorties & jeux", "Suivi photo"],
+      "tarifIds": ["promenade", "visite", "garde-domicile", "garde-chez-moi"],
       "priceLines": [
         ["Visite à domicile 30 min", "12 €"],
         ["Visite à domicile 1h", "18 €"],
@@ -28,7 +31,7 @@
     {
       "slug": "garde-de-chat",
       "label": "Garde de chat",
-      "labelLong": "Visites à domicile pour chat",
+      "labelLong": "Garde à domicile pour chat",
       "emoji": "🐱",
       "keyword": "garde de chat",
       "intent": "veille sur votre chat chez vous, avec repas, eau fraîche, litière, jeux et câlins, sans bouleverser son territoire",
@@ -39,6 +42,8 @@
         "Jeux, interactions et câlins",
         "Surveillance du comportement et de la santé"
       ],
+      "tags": ["Repas & eau", "Litière propre", "Jeux & câlins"],
+      "tarifIds": ["visite", "garde-domicile"],
       "priceLines": [
         ["Visite à domicile 30 min", "12 €"],
         ["Visite à domicile 45 min", "14 €"],
@@ -64,6 +69,8 @@
         "Surveillance attentive de l'état de santé",
         "Photos et nouvelles à chaque visite"
       ],
+      "tags": ["Alimentation adaptée", "Habitat entretenu", "Suivi santé"],
+      "tarifIds": ["visite", "garde-domicile"],
       "priceLines": [
         ["Visite à domicile 30 min", "12 €"],
         ["Visite à domicile 45 min", "14 €"],
@@ -88,15 +95,16 @@
         "Sorties adaptées au rythme de l'animal",
         "Moins d'ennui et de comportements destructeurs"
       ],
+      "tags": ["Condition physique", "Équilibre mental", "Rythme respecté"],
+      "tarifIds": ["promenade"],
       "priceLines": [
         ["Promenade 30 min", "12 €"],
         ["Promenade 1h", "17 €"],
-        ["Promenade Premium (1h+)", "22 €"],
-        ["Forfait 10 promenades d'1h", "153 €"]
+        ["Promenade Premium (1h+)", "22 €"]
       ],
       "faq": [
         ["À quelle fréquence promenez-vous mon chien ?", "Selon vos besoins : ponctuellement, ou en forfait pour des sorties régulières chaque semaine."],
-        ["Promenez-vous plusieurs chiens ensemble ?", "Les sorties sont individuelles par foyer, dans le respect du rythme de votre chien."]
+        ["Promenez-vous plusieurs chiens ensemble ?", "Les sorties se faire de manière indiviuelles ou en groupe jusqu'à 3 chien, dans le respect du rythme de votre chien."]
       ]
     }
   ]

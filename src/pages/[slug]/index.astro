@@ -105,9 +105,9 @@ const communeIntro = (type === 'commune' && commune.home)
 
       <section class="bg-white" id="tarifs">
         <div class="section-inner">
-          <div class="section-header"><p class="eyebrow">Tarifs</p><h2>Tarifs {service.label.toLowerCase()}</h2></div>
+          <div class="section-header"><p class="eyebrow">Tarifs</p><h2>Mes tarifs</h2></div>
           <div class="tarifs-grid">
-            <TarifCard service={service} />
+            {site.tarifs.filter((t) => service.tarifIds.includes(t.id)).map((t) => <TarifCard card={t} />)}
             <div class="tarif-card">
               <div class="tarif-card-head"><div class="tarif-icon">📋</div><div><h3>Bon à savoir</h3><span class="sub">Conditions</span></div></div>
               <div class="prose"><ul><li>Visites en journée entre 8h et 18h</li><li>Majoration de 30 % le dimanche</li><li>5 km inclus, puis 0,30 € / km</li><li>Photos et nouvelles à chaque passage</li></ul></div>
@@ -168,7 +168,7 @@ const communeIntro = (type === 'commune' && commune.home)
             <p class="eyebrow">Tarifs</p><h2>Tarifs à {commune.name}</h2>
             <p class="tarifs-intro">Tarifs indicatifs TTC. 5 km inclus autour de {site.homeCity}, puis 0,30 € / km. Majoration de 30 % le dimanche.</p>
           </div>
-          <div class="tarifs-grid">{services.map((s) => <TarifCard service={s} />)}</div>
+          <div class="tarifs-grid">{site.tarifs.map((t) => <TarifCard card={t} />)}</div>
         </div>
       </section>
 
@@ -203,11 +203,11 @@ const communeIntro = (type === 'commune' && commune.home)
       <section class="bg-white" id="tarifs">
         <div class="section-inner">
           <div class="section-header">
-            <p class="eyebrow">Tarifs</p><h2>Tarifs {service.label.toLowerCase()} à {commune.name}</h2>
+            <p class="eyebrow">Tarifs</p><h2>Mes tarifs à {commune.name}</h2>
             <p class="tarifs-intro">Tarifs indicatifs TTC. Frais kilométriques : 5 km inclus autour de {site.homeCity}, puis 0,30 € / km. Majoration de 30 % le dimanche.</p>
           </div>
           <div class="tarifs-grid">
-            <TarifCard service={service} />
+            {site.tarifs.filter((t) => service.tarifIds.includes(t.id)).map((t) => <TarifCard card={t} />)}
             <div class="tarif-card">
               <div class="tarif-card-head"><div class="tarif-icon">📋</div><div><h3>Conditions</h3><span class="sub">À {commune.name}</span></div></div>
               <div class="prose"><ul><li>Visites en journée entre 8h et 18h</li><li>Visite de présentation offerte</li><li>Photos et nouvelles à chaque passage</li><li>{commune.zone}</li></ul></div>

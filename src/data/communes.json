@@ -1,79 +1,376 @@
 {
   "_note": "Départements assignés automatiquement par regroupement géographique — à vérifier/affiner commune par commune avant mise en production. Ordre = proximité approximative de Chinon (sert au maillage 'communes proches').",
   "communes": [
-    { "name": "Chinon", "zone": "Indre-et-Loire (37)", "core": true, "home": true },
-    { "name": "Avoine", "zone": "Indre-et-Loire (37)", "core": true },
-    { "name": "Beaumont-en-Véron", "zone": "Indre-et-Loire (37)", "core": true },
-    { "name": "Savigny-en-Véron", "zone": "Indre-et-Loire (37)", "core": true },
-    { "name": "Cinais", "zone": "Indre-et-Loire (37)", "core": true },
-    { "name": "Huismes", "zone": "Indre-et-Loire (37)", "core": true },
-    { "name": "Ligré", "zone": "Indre-et-Loire (37)", "core": true },
-    { "name": "Rivière", "zone": "Indre-et-Loire (37)", "core": true },
-    { "name": "Lerné", "zone": "Indre-et-Loire (37)", "core": true },
-    { "name": "La Roche-Clermault", "zone": "Indre-et-Loire (37)", "core": true },
-    { "name": "Saint-Benoît-la-Forêt", "zone": "Indre-et-Loire (37)", "core": true },
-    { "name": "Cravant-les-Côteaux", "zone": "Indre-et-Loire (37)", "core": true },
-    { "name": "Anché", "zone": "Indre-et-Loire (37)" },
-    { "name": "Bréhémont", "zone": "Indre-et-Loire (37)" },
-    { "name": "Candes-Saint-Martin", "zone": "Indre-et-Loire (37)" },
-    { "name": "Chouzé-sur-Loire", "zone": "Indre-et-Loire (37)" },
-    { "name": "Couziers", "zone": "Indre-et-Loire (37)" },
-    { "name": "La Chapelle-sur-Loire", "zone": "Indre-et-Loire (37)" },
-    { "name": "Marçay", "zone": "Indre-et-Loire (37)" },
-    { "name": "Panzoult", "zone": "Indre-et-Loire (37)" },
-    { "name": "Parçay-sur-Vienne", "zone": "Indre-et-Loire (37)" },
-    { "name": "Rigny-Ussé", "zone": "Indre-et-Loire (37)" },
-    { "name": "Saint-Germain-sur-Vienne", "zone": "Indre-et-Loire (37)" },
-    { "name": "Sazilly", "zone": "Indre-et-Loire (37)" },
-    { "name": "Seuilly", "zone": "Indre-et-Loire (37)" },
-    { "name": "Tavant", "zone": "Indre-et-Loire (37)" },
-    { "name": "Theneuil", "zone": "Indre-et-Loire (37)" },
-    { "name": "Thizay", "zone": "Indre-et-Loire (37)" },
-    { "name": "Champigny-sur-Veude", "zone": "Indre-et-Loire (37)" },
-    { "name": "Azay-le-Rideau", "zone": "Indre-et-Loire (37)" },
-    { "name": "Bourgueil", "zone": "Indre-et-Loire (37)" },
-    { "name": "Langeais", "zone": "Indre-et-Loire (37)" },
-    { "name": "Richelieu", "zone": "Indre-et-Loire (37)" },
-    { "name": "Sainte-Maure-de-Touraine", "zone": "Indre-et-Loire (37)" },
-    { "name": "Lignières-de-Touraine", "zone": "Indre-et-Loire (37)" },
-    { "name": "Basses", "zone": "Vienne (86)" },
-    { "name": "Beuxes", "zone": "Vienne (86)" },
-    { "name": "Curçay-sur-Dive", "zone": "Vienne (86)" },
-    { "name": "Glénouze", "zone": "Vienne (86)" },
-    { "name": "Les Trois-Moutiers", "zone": "Vienne (86)" },
-    { "name": "Loudun", "zone": "Vienne (86)" },
-    { "name": "Maulay", "zone": "Vienne (86)" },
-    { "name": "Messemé", "zone": "Vienne (86)" },
-    { "name": "Morton", "zone": "Vienne (86)" },
-    { "name": "Pouançay", "zone": "Vienne (86)" },
-    { "name": "Ranton", "zone": "Vienne (86)" },
-    { "name": "Raslay", "zone": "Vienne (86)" },
-    { "name": "Saix", "zone": "Vienne (86)" },
-    { "name": "Saint-Laon", "zone": "Vienne (86)" },
-    { "name": "Sammarçolles", "zone": "Vienne (86)" },
-    { "name": "Ternay", "zone": "Vienne (86)" },
-    { "name": "Vézières", "zone": "Vienne (86)" },
-    { "name": "Saint-Martin-de-Mâcon", "zone": "Deux-Sèvres (79)" },
-    { "name": "Antoigné", "zone": "Maine-et-Loire (49)" },
-    { "name": "Artannes-sur-Thouet", "zone": "Maine-et-Loire (49)" },
-    { "name": "Bellevigne-les-Châteaux", "zone": "Maine-et-Loire (49)" },
-    { "name": "Brézé", "zone": "Maine-et-Loire (49)" },
-    { "name": "Brossay", "zone": "Maine-et-Loire (49)" },
-    { "name": "Cizay-la-Madeleine", "zone": "Maine-et-Loire (49)" },
-    { "name": "Courchamps", "zone": "Maine-et-Loire (49)" },
-    { "name": "Distré", "zone": "Maine-et-Loire (49)" },
-    { "name": "Épieds", "zone": "Maine-et-Loire (49)" },
-    { "name": "Fontevraud-l'Abbaye", "zone": "Maine-et-Loire (49)" },
-    { "name": "Le Coudray-Macouard", "zone": "Maine-et-Loire (49)" },
-    { "name": "Montsoreau", "zone": "Maine-et-Loire (49)" },
-    { "name": "Parnay", "zone": "Maine-et-Loire (49)" },
-    { "name": "Saint-Cyr-en-Bourg", "zone": "Maine-et-Loire (49)" },
-    { "name": "Saint-Just-sur-Dive", "zone": "Maine-et-Loire (49)" },
-    { "name": "Souzay-Champigny", "zone": "Maine-et-Loire (49)" },
-    { "name": "Turquant", "zone": "Maine-et-Loire (49)" },
-    { "name": "Varennes-sur-Loire", "zone": "Maine-et-Loire (49)" },
-    { "name": "Varrains", "zone": "Maine-et-Loire (49)" },
-    { "name": "Vaudelnay", "zone": "Maine-et-Loire (49)" },
-    { "name": "Villebernier", "zone": "Maine-et-Loire (49)" }
+    {
+      "name": "Chinon",
+      "zone": "Indre-et-Loire (37)",
+      "core": true,
+      "home": true
+    },
+    {
+      "name": "Avoine",
+      "zone": "Indre-et-Loire (37)",
+      "core": true
+    },
+    {
+      "name": "Beaumont-en-Véron",
+      "zone": "Indre-et-Loire (37)",
+      "core": true
+    },
+    {
+      "name": "Savigny-en-Véron",
+      "zone": "Indre-et-Loire (37)",
+      "core": true
+    },
+    {
+      "name": "Cinais",
+      "zone": "Indre-et-Loire (37)",
+      "core": true
+    },
+    {
+      "name": "Huismes",
+      "zone": "Indre-et-Loire (37)",
+      "core": true
+    },
+    {
+      "name": "Ligré",
+      "zone": "Indre-et-Loire (37)",
+      "core": true
+    },
+    {
+      "name": "Rivière",
+      "zone": "Indre-et-Loire (37)",
+      "core": true
+    },
+    {
+      "name": "Lerné",
+      "zone": "Indre-et-Loire (37)",
+      "core": true
+    },
+    {
+      "name": "La Roche-Clermault",
+      "zone": "Indre-et-Loire (37)",
+      "core": true
+    },
+    {
+      "name": "Saint-Benoît-la-Forêt",
+      "zone": "Indre-et-Loire (37)",
+      "core": true
+    },
+    {
+      "name": "Cravant-les-Côteaux",
+      "zone": "Indre-et-Loire (37)",
+      "core": true
+    },
+    {
+      "name": "Anché",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-15"
+    },
+    {
+      "name": "Bréhémont",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-15"
+    },
+    {
+      "name": "Candes-Saint-Martin",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-15"
+    },
+    {
+      "name": "Chouzé-sur-Loire",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-15"
+    },
+    {
+      "name": "Couziers",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-15"
+    },
+    {
+      "name": "La Chapelle-sur-Loire",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-15"
+    },
+    {
+      "name": "Marçay",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-15"
+    },
+    {
+      "name": "Panzoult",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-15"
+    },
+    {
+      "name": "Parçay-sur-Vienne",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-15"
+    },
+    {
+      "name": "Rigny-Ussé",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-15"
+    },
+    {
+      "name": "Saint-Germain-sur-Vienne",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-22"
+    },
+    {
+      "name": "Sazilly",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-22"
+    },
+    {
+      "name": "Seuilly",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-22"
+    },
+    {
+      "name": "Tavant",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-22"
+    },
+    {
+      "name": "Theneuil",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-22"
+    },
+    {
+      "name": "Thizay",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-22"
+    },
+    {
+      "name": "Champigny-sur-Veude",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-22"
+    },
+    {
+      "name": "Azay-le-Rideau",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-22"
+    },
+    {
+      "name": "Bourgueil",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-22"
+    },
+    {
+      "name": "Langeais",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-22"
+    },
+    {
+      "name": "Richelieu",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-29"
+    },
+    {
+      "name": "Sainte-Maure-de-Touraine",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-29"
+    },
+    {
+      "name": "Lignières-de-Touraine",
+      "zone": "Indre-et-Loire (37)",
+      "publishAt": "2026-06-29"
+    },
+    {
+      "name": "Basses",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-06-29"
+    },
+    {
+      "name": "Beuxes",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-06-29"
+    },
+    {
+      "name": "Curçay-sur-Dive",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-06-29"
+    },
+    {
+      "name": "Glénouze",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-06-29"
+    },
+    {
+      "name": "Les Trois-Moutiers",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-06-29"
+    },
+    {
+      "name": "Loudun",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-06-29"
+    },
+    {
+      "name": "Maulay",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-06-29"
+    },
+    {
+      "name": "Messemé",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-07-06"
+    },
+    {
+      "name": "Morton",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-07-06"
+    },
+    {
+      "name": "Pouançay",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-07-06"
+    },
+    {
+      "name": "Ranton",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-07-06"
+    },
+    {
+      "name": "Raslay",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-07-06"
+    },
+    {
+      "name": "Saix",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-07-06"
+    },
+    {
+      "name": "Saint-Laon",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-07-06"
+    },
+    {
+      "name": "Sammarçolles",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-07-06"
+    },
+    {
+      "name": "Ternay",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-07-06"
+    },
+    {
+      "name": "Vézières",
+      "zone": "Vienne (86)",
+      "publishAt": "2026-07-06"
+    },
+    {
+      "name": "Saint-Martin-de-Mâcon",
+      "zone": "Deux-Sèvres (79)",
+      "publishAt": "2026-07-13"
+    },
+    {
+      "name": "Antoigné",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-13"
+    },
+    {
+      "name": "Artannes-sur-Thouet",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-13"
+    },
+    {
+      "name": "Bellevigne-les-Châteaux",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-13"
+    },
+    {
+      "name": "Brézé",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-13"
+    },
+    {
+      "name": "Brossay",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-13"
+    },
+    {
+      "name": "Cizay-la-Madeleine",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-13"
+    },
+    {
+      "name": "Courchamps",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-13"
+    },
+    {
+      "name": "Distré",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-13"
+    },
+    {
+      "name": "Épieds",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-13"
+    },
+    {
+      "name": "Fontevraud-l'Abbaye",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-20"
+    },
+    {
+      "name": "Le Coudray-Macouard",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-20"
+    },
+    {
+      "name": "Montsoreau",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-20"
+    },
+    {
+      "name": "Parnay",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-20"
+    },
+    {
+      "name": "Saint-Cyr-en-Bourg",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-20"
+    },
+    {
+      "name": "Saint-Just-sur-Dive",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-20"
+    },
+    {
+      "name": "Souzay-Champigny",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-20"
+    },
+    {
+      "name": "Turquant",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-20"
+    },
+    {
+      "name": "Varennes-sur-Loire",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-20"
+    },
+    {
+      "name": "Varrains",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-20"
+    },
+    {
+      "name": "Vaudelnay",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-27"
+    },
+    {
+      "name": "Villebernier",
+      "zone": "Maine-et-Loire (49)",
+      "publishAt": "2026-07-27"
+    }
   ]
 }

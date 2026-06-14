@@ -11,7 +11,7 @@ const desc = commune
   <p>{desc}</p>
   {!commune && (
     <div class="service-tags">
-      {service.bullets.slice(0, 3).map((b) => <span class="tag">{b.split(' ').slice(0, 2).join(' ')}</span>)}
+      {service.tags.slice(0, 3).map((t) => <span class="tag">{t}</span>)}
     </div>
   )}
   <a href={href} class="service-link">{commune ? 'Voir le détail →' : 'En savoir plus →'}</a>

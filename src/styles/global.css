@@ -122,6 +122,7 @@ h3{font-family:'Fraunces',serif;font-weight:500;color:var(--dark)}
 .tarif-row:last-child{border-bottom:none}
 .tarif-row-name{font-size:14px;font-weight:500;color:var(--dark)}
 .tarif-row-price{font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--green);white-space:nowrap}
+.tarif-badge{font-size: 10px;font-weight: 700;color: var(--brown);background: var(--white);padding: 2px 7px;border-radius: 100px;margin-left: 6px;letter-spacing: .04em;text-transform: uppercase;vertical-align: middle;}
 
 /* ---------- FORFAITS ---------- */
 .forfaits-block{background:var(--green);border-radius:20px;padding:28px 32px;margin-bottom:24px}

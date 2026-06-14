@@ -7,7 +7,7 @@
   "phoneIntl": "33687137914",
   "email": "info@les-ptites-pattes-de-chinon.com",
   "hours": "Du lundi au samedi, 8h–18h · Dimanche selon disponibilités",
-  "radiusKm": 20,
+  "radiusKm": 30,
   "credentials": [
     "ACACED",
     "Premiers secours canins et félins",
@@ -19,6 +19,55 @@
     "facebook": "https://facebook.com/profile.php?id=61575037797263",
     "tiktok": "https://tiktok.com/@milomignon"
   },
+  "tarifs": [
+  {
+    "id": "promenade",
+    "emoji": "🦮",
+    "label": "Promenades chiens",
+    "sub": "Je viens à votre domicile",
+    "lines": [
+      ["30 min", "12 €"],
+      ["1h", "17 €"],
+      ["Premium (1h+) ✨", "22 €"]
+    ]
+  },
+  {
+    "id": "visite",
+    "emoji": "🏠",
+    "label": "Visites à domicile",
+    "sub": "Chiens, chats & NAC",
+    "lines": [
+      ["30 min", "12 €"],
+      ["45 min", "14 €"],
+      ["1h", "18 €"]
+    ]
+  },
+  {
+    "id": "garde-domicile",
+    "emoji": "🛋️",
+    "label": "Gardes à votre domicile",
+    "sub": "Chiens, chats & NAC",
+    "lines": [
+      ["Demi-journée", "30 €"],
+      ["Journée", "35 €"],
+      ["Nuitée (journée + nuit) 🌙", "50 €"],
+      ["Chien, Chat ou NAC supplémentaire", "+10 €", "option"],
+      ["Médication 💊", "+3 €", "option"]
+    ]
+  },
+  {
+    "id": "garde-chez-moi",
+    "emoji": "🏡",
+    "label": "Garde à mon domicile",
+    "sub": "Chiens sociables uniquement",
+    "lines": [
+      ["Journée", "25 €"],
+      ["Nuitée (journée + nuit) 🌙", "35 €"],
+      ["Chien supplémentaire", "+10 €", "option"],
+      ["Médication 💊", "+3 €", "option"]
+    ]
+  }
+],
   "forfaits": [
     {
       "name": "Forfait 10 promenades d’ 1h (chien)",
@@ -44,7 +93,7 @@
   ],
   "majoration": "Dimanche : majoration de +30 %",
   "fraisKm": [
-    "Déplacement inclus dans un rayon de 5 km autour de Chinon",
+    "Déplacement inclus dans un rayon de 30 km autour de Chinon",
     "Au-delà de 5 km : 0,30 € / km supplémentaire"
   ],
   "why": [
@@ -56,7 +105,7 @@
     {
       "icon": "📱",
       "title": "Suivi en temps réel",
-      "text": "Photos et compte-rendus envoyés après chaque visite via WhatsApp pour votre sérénité."
+      "text": "Photos et compte-rendus envoyés après chaque visite via WhatsApp ou SMS pour votre sérénité."
     },
     {
       "icon": "🩺",

@@ -37,7 +37,6 @@ const allZones = communes.map((c) => ({
         <div class="hero-trust">
           <div class="trust-item"><span class="num">ACACED</span><span class="label">Certifié</span></div>
           <div class="trust-item"><span class="num">+3 ans</span><span class="label">D'expérience</span></div>
-          <div class="trust-item"><span class="num">100%</span><span class="label">À domicile</span></div>
           <div class="trust-item"><span class="num">6j/7</span><span class="label">Disponible</span></div>
         </div>
       </div>
@@ -80,7 +79,7 @@ const allZones = communes.map((c) => ({
         </p>
       </div>
       <div class="tarifs-grid">
-        {services.map((s) => <TarifCard service={s} />)}
+        {site.tarifs.map((t) => <TarifCard card={t} />)}
       </div>
 
       <div class="forfaits-block">
