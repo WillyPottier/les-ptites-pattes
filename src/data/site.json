@@ -6,7 +6,7 @@
   "phone": "06 87 13 79 14",
   "phoneIntl": "33687137914",
   "email": "info@les-ptites-pattes-de-chinon.com",
-  "hours": "Du lundi au samedi, 8h–18h · Dimanche selon disponibilités",
+  "hours": "Tous les jours de 8h à 18h",
   "radiusKm": 30,
   "credentials": [
     "ACACED",
@@ -91,7 +91,6 @@
     "Les visites comprennent : remplissage des gamelles, nettoyage des salissures, temps de jeu et/ou câlins",
     "Vous recevez photos et messages pour chaque visite et garde"
   ],
-  "majoration": "Dimanche : majoration de +30 %",
   "fraisKm": [
     "Déplacement inclus dans un rayon de 30 km autour de Chinon",
     "Au-delà de 5 km : 0,30 € / km supplémentaire"
@@ -115,7 +114,7 @@
     {
       "icon": "📍",
       "title": "Local & réactif",
-      "text": "Je connais Chinon et ses alentours. Disponible 6j/7, réponse rapide."
+      "text": "Je connais Chinon et ses alentours. Disponible 7j/7, réponse rapide."
     }
   ]
 }

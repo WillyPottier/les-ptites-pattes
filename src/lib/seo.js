@@ -47,7 +47,7 @@ export function neighbors(c, n = 6) {
 
 // 4 variantes d'intro tournantes -> évite le contenu dupliqué mot pour mot
 export const introVariants = [
-  (s, c) => `Vous cherchez un service de ${s.keyword} à ${c.name} ? Basé à ${site.homeCity}, j'interviens à ${c.name} (${c.zone}) pour ${s.intent}. Votre animal reste chez lui, dans ses repères, pendant toute votre absence.`,
+  (s, c) => `Vous cherchez un service de ${s.keyword} à ${c.name} ? Basé à ${site.homeCity}, j'interviens à ${c.name} (${c.zone}) pour ${s.intent}.`,
   (s, c) => `À ${c.name}, je propose un service de ${s.keyword} attentif et personnalisé. ${s.intro} J'interviens à votre domicile à ${c.name} et dans les environs.`,
   (s, c) => `Besoin d'un professionnel pour la ${s.keyword} à ${c.name} (${c.zone}) ? Je me déplace à votre domicile pour ${s.intent}, en respectant scrupuleusement les habitudes de votre compagnon.`,
   (s, c) => `Confier son animal n'est jamais anodin. À ${c.name}, je propose un service de ${s.keyword} de confiance : ${s.intent}. Une visite de présentation est offerte avant toute première prestation.`,
@@ -70,7 +70,7 @@ export function localBusinessLD() {
     areaServed: communes.slice(0, 30).map((c) => ({ '@type': 'City', name: c.name })),
     address: { '@type': 'PostalAddress', addressLocality: site.homeCity, addressRegion: 'Indre-et-Loire', addressCountry: 'FR' },
     priceRange: '€€',
-    openingHours: 'Mo-Sa 08:00-18:00',
+    openingHours: 'Mo-Su 08:00-18:00',
   };
 }
 
